@@ -1,0 +1,12 @@
+.AddTopic  {
+    border: none;
+    padding: 1rem;
+    color: white;
+    background-color: orangered; 
+    cursor: pointer;
+    transition: all 2ms;
+}
+
+.AddTopic:active {
+    transform: translateX(2px) translateY(2px);
+}

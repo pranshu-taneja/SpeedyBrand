@@ -1,0 +1,37 @@
+.card-Wrapper{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid darkgray;
+    border-radius: 0.2rem;
+    padding-left: 1rem;
+}
+
+.card-Wrapper>p{
+    font-weight: 600;
+}
+.secondColumn-Wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.secondColumn-Wrapper > button{
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tags-Wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.tags-Wrapper>div{
+    border: 1px solid gray;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 0rem 2rem;
+}

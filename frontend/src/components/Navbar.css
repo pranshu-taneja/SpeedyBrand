@@ -1,0 +1,19 @@
+.navBar-Wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NavRoutes{
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    
+}
+
+.NavRoutes>a{
+    text-decoration: none;
+}
+
+
