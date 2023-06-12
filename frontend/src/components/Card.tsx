@@ -1,12 +1,22 @@
 // import React from "react";
 import "./Card.css";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 type Tcarddata = {
   topicName: string;
   tags: string[];
 };
+
+
 function Card(props: Tcarddata) {
+  
+  const navigate = useNavigate();
+
+  function handleWrite(){
+    navigate("/AiEditor");
+  }
+
   const generateRandomColor = () => {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     return randomColor;
@@ -28,7 +38,7 @@ function Card(props: Tcarddata) {
             );
           })}
         </div>
-        <button>Write{">"}</button>
+        <button onClick={handleWrite}>Write{">"}</button>
       </div>
     </div>
   );
