@@ -43,7 +43,6 @@ app.get("/gettopics", async(req,res)=>{
 })
 
 
-
 app.listen(port, async () => {
     await mongoose.connect(`${process.env.MONGO_URL}`).then(() => {
         console.log("mongodb Connected successfully");
