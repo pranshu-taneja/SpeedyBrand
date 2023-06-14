@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
+
 type Tcarddata = {
   topic: string;
   tags: string[];
@@ -14,7 +15,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/gettopics", {
+    fetch(`${import.meta.env.VITE_URL}/gettopics`, {
       method: "GET",
     })
       .then((response) => response.json())

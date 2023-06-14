@@ -38,7 +38,7 @@ export default function BasicModal() {
 
     console.log(data);
 
-    fetch("http://localhost:3000/addtopic", {
+    fetch(`${import.meta.env.VITE_URL}/addtopic`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
