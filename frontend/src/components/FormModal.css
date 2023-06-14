@@ -10,3 +10,9 @@
 .AddTopic:active {
     transform: translateX(2px) translateY(2px);
 }
+
+
+form{
+    display: flex;
+    flex-direction: column;
+}

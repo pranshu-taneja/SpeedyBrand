@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 
 type Tcarddata = {
-  topicName: string;
+  topic: string;
   tags: string[];
 };
 
@@ -24,7 +24,7 @@ function Card(props: Tcarddata) {
 
   return (
     <div className="card-Wrapper">
-      <p>{props.topicName}</p>
+      <p>{props.topic}</p>
       <div className="secondColumn-Wrapper">
         <div className="tags-Wrapper">
           {props.tags.map((value) => {
