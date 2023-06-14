@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import Topic from "./model/topic.js";
-import topic from "./model/topic.js";
 import CORS from "cors"
 
 
@@ -34,7 +33,7 @@ app.post("/addtopic", async (req, res) => {
 
 app.get("/gettopics", async(req,res)=>{
     try{
-        const details = await topic.find();
+        const details = await Topic.find();
         res.send(details)
     }
     catch(error){
