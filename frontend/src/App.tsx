@@ -15,7 +15,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_URL}/gettopics`, {
+    const getTopicUrl =  `${import.meta.env.VITE_URL}`+ `/gettopics`
+    console.log(getTopicUrl);
+
+    fetch(getTopicUrl, {
       method: "GET",
     })
       .then((response) => response.json())
