@@ -9,3 +9,10 @@
     right: 0;
     margin-right: 1rem;
 }
+
+.PromptValue{
+    width: 94vw;
+    height: 2rem;
+    border: 1px solid rgb(194, 194, 194);
+    padding: 0.5rem;
+}

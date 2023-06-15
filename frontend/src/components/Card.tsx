@@ -13,7 +13,8 @@ function Card(props: Tcarddata) {
   const navigate = useNavigate();
 
   function handleWrite() {
-    navigate("/AiEditor");
+    // navigate("/AiEditor");
+    navigate(`/AiEditor?data=${encodeURIComponent(props.topic)}`);
   }
 
   function handleDelete() {

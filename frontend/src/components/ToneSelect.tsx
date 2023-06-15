@@ -23,11 +23,9 @@ export default function ToneSelect() {
           label="Tone"
           onChange={handleChange}
         >
-          <MenuItem value={10}>Smooth</MenuItem>
-          <MenuItem value={20}>Quirky</MenuItem>
-          <MenuItem value={30}>Crazy</MenuItem>
-          <MenuItem value={30}>Scary</MenuItem>
-          <MenuItem value={30}>Angry</MenuItem>
+          <MenuItem value={10}>Sad</MenuItem>
+          <MenuItem value={20}>Angry</MenuItem>
+          <MenuItem value={30}>Funny</MenuItem>
         </Select>
       </FormControl>
     </Box>
