@@ -6,15 +6,33 @@ import { useNavigate } from "react-router-dom";
 type Tcarddata = {
   topic: string;
   tags: string[];
+  _id: string;
 };
 
-
 function Card(props: Tcarddata) {
-  
   const navigate = useNavigate();
 
-  function handleWrite(){
+  function handleWrite() {
     navigate("/AiEditor");
+  }
+
+  function handleDelete() {
+    const data = {
+      id: props._id,
+    };
+
+    const deleteURL = `${import.meta.env.VITE_URL}` + "/deletetopic";
+
+    fetch(deleteURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then(() => {
+      window.alert("Topic Deleted Successfully!!✅");
+      window.location.reload();
+    });
   }
 
   const generateRandomColor = () => {
@@ -38,7 +56,11 @@ function Card(props: Tcarddata) {
             );
           })}
         </div>
-        <button onClick={handleWrite}>Write{">"}</button>
+
+        <div className="createDeleteButton" style={{display:"flex", gap:"1rem"}}>
+          <button onClick={handleWrite}>Write{">"}</button>
+          <button onClick={handleDelete}>Delete{">"}</button>
+        </div>
       </div>
     </div>
   );

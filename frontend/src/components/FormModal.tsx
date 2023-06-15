@@ -1,12 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import "./FormModal.css"
-// import TextField from "@mui/material/TextField";
-// import { FormControl, FormLabel } from "@mui/material";
+import "./FormModal.css";
 
 const style = {
   position: "absolute" as "absolute",
@@ -38,7 +34,7 @@ export default function BasicModal() {
 
     console.log(data);
 
-    const addTopicUrl = `${import.meta.env.VITE_URL}`+ `/addtopic`;
+    const addTopicUrl = `${import.meta.env.VITE_URL}` + `/addtopic`;
     fetch(addTopicUrl, {
       method: "POST",
       headers: {
@@ -48,13 +44,10 @@ export default function BasicModal() {
     })
       .then((response) => response.json())
       .then(() => {
-        // Handle the response or result here
-        // console.log(result);
-        window.alert("Topic Created Successfully!!🙌")
+        window.alert("Topic Created Successfully!!🙌");
         window.location.reload();
       })
       .catch((error) => {
-        // Handle any errors that occurred during the fetch request
         console.error(error);
       });
   }
@@ -82,7 +75,7 @@ export default function BasicModal() {
               onChange={(event) => {
                 setTopicName(event.target.value);
               }}
-              />
+            />
             <br />
             <label htmlFor="tags">Tags</label>
             <input

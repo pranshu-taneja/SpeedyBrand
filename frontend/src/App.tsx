@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 type Tcarddata = {
   topic: string;
   tags: string[];
+  _id: string;
 };
 
 function App() {
