@@ -42,10 +42,32 @@ app.get("/gettopics", async(req,res)=>{
 })
 
 
-app.listen(port, async () => {
-    await mongoose.connect(`${process.env.MONGO_URL}`).then(() => {
-        console.log("mongodb Connected successfully");
-        console.log(`Server is listening on port ${port}`);
-    })
-})
+// Connect to MongoDB
+const connectToDB = async () => {
+    try {
+      await mongoose.connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      console.log("Connected to MongoDB");
+    } catch (err) {
+      console.error(err);
+      setTimeout(connectToDB, 1000); // Retry connection after delay
+    }
+  };
+
+  // Start server when connected to MongoDB
+const startServer = async () => {
+    try {
+      await connectToDB();
+      app.listen(process.env.PORT || 5000, () => {
+        console.log(`Server running on port ${process.env.PORT || 5000}`);
+      });
+    } catch (err) {
+      console.error(err);
+      process.exit(1);
+    }
+  };
+
+startServer();
 
