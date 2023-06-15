@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const getTopicUrl =  `${import.meta.env.VITE_URL}`+ `/gettopics`
-    console.log(getTopicUrl);
+    // console.log(getTopicUrl);
 
     fetch(getTopicUrl, {
       method: "GET",
